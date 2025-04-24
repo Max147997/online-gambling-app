@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MyCasino</title>
+  <!-- Font Awesome für Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Sign-In / Sign-Up Overlay -->
+  <div id="authOverlay" class="overlay">
+    <div class="auth-box">
+      <h2 id="authTitle">Anmelden</h2>
+      <input id="authUsername" type="text"     placeholder="Benutzername" />
+      <input id="authPassword" type="password" placeholder="Passwort" />
+      <button id="authSubmit">Anmelden</button>
+      <p id="toggleAuth">
+        Noch keinen Account?
+        <span id="toggleLink" class="link">Registrieren</span>
+      </p>
+      <p id="authMsg" class="msg"></p>
+    </div>
+  </div>
+
+  <!-- Topbar mit Balance -->
+  <header id="topbar" class="topbar hidden">
+    <div class="logo"><i class="fa-solid fa-crown"></i> MyCasino</div>
+    <nav class="topnav">
+      <a href="#">Home</a>
+      <a href="#">Games</a>
+      <a href="#">Slots</a>
+      <a href="#">Bonuses</a>
+      <a href="#">VIP Club</a>
+    </nav>
+    <div class="user-area">
+      <span id="coins">0</span>
+      <i class="fa-solid fa-coins"></i>
+      <button class="btn-deposit">
+        <i class="fa-solid fa-plus"></i> Deposit
+      </button>
+    </div>
+  </header>
+
+  <!-- Sidebar mit Kategorien -->
+  <aside id="sidebar" class="sidebar hidden">
+    <div class="menu-group">
+      <h3>Kategorien</h3>
+      <a href="#category-originals">Originals</a>
+      <a href="#category-popular">Beliebt</a>
+      <a href="#category-slots">Slots</a>
+      <a href="#category-live">Live Casino</a>
+    </div>
+  </aside>
+
+  <!-- Hauptinhalt -->
+  <main id="mainContent" class="main-content hidden">
+    <section id="category-originals" class="game-section">
+      <h2>Originals</h2>
+      <div class="card-row" id="row-originals"></div>
+    </section>
+    <section id="category-popular" class="game-section">
+      <h2>Beliebte Spiele</h2>
+      <div class="card-row" id="row-popular"></div>
+    </section>
+    <section id="category-slots" class="game-section">
+      <h2>Slots</h2>
+      <div class="card-row" id="row-slots"></div>
+    </section>
+  </main>
+
+  <!-- JavaScript auslagern -->
+  <script src="app.js"></script>
+</body>
+</html>
